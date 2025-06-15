@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Results</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      padding: 30px;
+      margin: 0;
+    }
 
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .photo {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Matching Photos Found</h2>
+  <div class="grid">
+    {% for photo in results %}
+      <div class="photo">
+        <img src="{{ photo }}" alt="Matched Photo" />
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
